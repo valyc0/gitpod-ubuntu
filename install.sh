@@ -1,3 +1,5 @@
+docker network create mynet  
+
   cat << EOF > ./startup.sh
 sudo apt update
 # openssh-server
