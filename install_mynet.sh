@@ -11,7 +11,8 @@ echo "admin:admin:Y" > CREATEUSERS.TXT
 echo "ubuntu:ubuntu:N" >> CREATEUSERS.TXT
 docker run -dit  \
           --name=ubuntu20.04 \
-		  --privileged=true \
+		  --net mynet \
+           --privileged=true \
            -p 3389:3389 \
            -p 2222:22 \
            -e TZ="Europe/Rome" \
@@ -25,7 +26,7 @@ docker run -dit  \
 		   
 docker run -d \
   --name=remmina \
-  --net host \
+  --net mynet \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/Rome \
