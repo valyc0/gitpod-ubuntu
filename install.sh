@@ -15,7 +15,7 @@ echo "ubuntu:ubuntu:N" >> CREATEUSERS.TXT
 docker run -dit  \
           --name=ubuntu20.04 \
 		  --privileged=true \
-           -p 3399:3389 \
+           -p 338s9:3389 \
            -p 2222:22 \
            -e TZ="Europe/Rome" \
            -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
