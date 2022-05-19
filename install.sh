@@ -1,5 +1,8 @@
 docker network create mynet  
 
+docker rm -f remmina
+docker rm -f ubuntu20.04
+
   cat << EOF > ./startup.sh
 sudo apt update
 # openssh-server
@@ -12,7 +15,7 @@ echo "ubuntu:ubuntu:N" >> CREATEUSERS.TXT
 docker run -dit  \
           --name=ubuntu20.04 \
 		  --privileged=true \
-           -p 3389:3389 \
+           -p 3399:3389 \
            -p 2222:22 \
            -e TZ="Europe/Rome" \
            -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
